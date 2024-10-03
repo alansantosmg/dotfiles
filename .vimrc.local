@@ -82,9 +82,10 @@ set nowritebackup
 " Seta tema padrão
 "colorscheme torte
 "colorscheme PaperColor
-colorscheme onedark
+colorscheme gruvbox
+"colorscheme gruvbox
 
-"let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_contrast_dark = 'hard'
 
 
 
@@ -93,7 +94,17 @@ colorscheme onedark
 set background=dark
 "set background=light
 
-let g:airline_theme = 'onedark'
+let g:airline_theme = 'gruvbox'
+
+if exists('python_highlight_all')
+    unlet python_highlight_all
+endif
+if exists('python_space_error_highlight')
+    unlet python_space_error_highlight
+endif
+
+let python_space_error_highlight = 0
+
 
 
 "*******************************************************************************
@@ -207,7 +218,7 @@ if has('gui_running')
     set background=dark
 
     " Definir o tom de fundo.
-    colorscheme molokai
+""    colorscheme molokai
 
     " Definir uma fonte personalizada instalada no seu computador.
     " Sintaxe: set guifont=<nome_da_fonte>\ <peso_da_fonte>\ <tamanho>
